@@ -1,0 +1,93 @@
+/*general applications & classes*/
+body {
+    font-family: helvetica;
+    text-align: center;
+    color: white;
+    background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg);
+}
+
+p {
+   margin-left: 50px;
+   margin-right: 50px;
+   text-align: justify; 
+   font-size: 16px;
+} 
+
+a:link {
+    color: #EBD0F6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+* {
+    /*border:2px solid black;*/
+}
+
+/*navigation bar*/
+#navbar {
+  text-align: center;
+  font-family: helvetica;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+ }
+ 
+ #navbar li {
+  display: inline-block;
+  padding: 10px;
+  background-color: transparent;
+ } 
+ 
+ #navbar a {
+  color: #3d3f4a;
+ }
+
+/*heading!*/
+h1 {
+  font-weight: bold oblique;
+  padding: 1px 1px 0px 1px; 
+}
+
+/* "who am i?" */
+.container > * {
+    display: inline-block;
+    vertical-align: middle;
+    /*border:2px solid black;*/
+}
+
+.imgcontainer > * {
+    /*display: list-item;*/
+    text-align: center;
+    width: 100%;
+}
+    
+.imgcontainer {
+    width: 15%;
+}
+
+.transbox {
+    background-color: #E9E9EA;
+    opacity: 0.6;
+    filter: alpha(opacity=);
+    width: 80%;
+    margin:0;
+}
+
+.container > p {
+    width: 50%;
+}
+
+/* favorite things*/
+
+.favorite-things {
+    width: 40%;
+    text-align: left;
+}
+
+.hobbies {
+    width: 40%;
+}
