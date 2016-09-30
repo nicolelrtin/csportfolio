@@ -1,7 +1,7 @@
 /*general applications & classes*/
 body {
     font-family: helvetica;
-    text-align: center;
+    text-align: justify;
     color: white;
     background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg);
 }
@@ -46,48 +46,33 @@ a:hover {
   color: #3d3f4a;
  }
 
+#tableoc {
+    text-align: left;
+    text-align: center;
+    font-family: helvetica;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;
+    margin-left: 30%;
+    margin-right: 30%;
+ }
+ 
+ #tableoc li {
+  display: inline-block;
+  padding: 2px;
+  background-color: transparent;
+  color: #3d3f4a;
+  font-weight: bold;
+ }
+
 /*heading!*/
 h1 {
-  font-weight: bold oblique;
+  font: italic bold;
   padding: 1px 1px 0px 1px; 
+  text-align: center;
+  font-style: italic
 }
 
-/* "who am i?" */
-.container > * {
-    display: inline-block;
-    vertical-align: middle;
-    /*border:2px solid black;*/
-}
-
-.imgcontainer > * {
-    /*display: list-item;*/
+h2 {
     text-align: center;
-    width: 100%;
-}
-    
-.imgcontainer {
-    width: 15%;
-}
-
-.transbox {
-    background-color: #E9E9EA;
-    opacity: 0.6;
-    filter: alpha(opacity=);
-    width: 80%;
-    margin:0;
-}
-
-.container > p {
-    width: 50%;
-}
-
-/* favorite things*/
-
-.favorite-things {
-    width: 40%;
-    text-align: left;
-}
-
-.hobbies {
-    width: 40%;
 }
