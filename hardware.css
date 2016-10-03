@@ -1,9 +1,12 @@
 /*general applications & classes*/
 body {
+    /*margin-top: 200px;*/
     font-family: helvetica;
     text-align: justify;
     color: white;
-    background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg);
+    background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg) no-repeat center center fixed;;
+
+    background-size: cover;
 }
 
 p {
@@ -55,6 +58,7 @@ a:hover {
     background-color: #FFFFFF;
     margin-left: 30%;
     margin-right: 30%;
+    /*position: fixed;*/
  }
  
  #tableoc li {
@@ -76,3 +80,10 @@ h1 {
 h2 {
     text-align: center;
 }
+
+/*.transbox {*/
+/*    background-color: #E9E9EA;*/
+    /*opacity: 0.6;*/
+/*    filter: opacity(10%);*/
+/*    padding: nope;*/
+/*}*/
