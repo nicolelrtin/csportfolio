@@ -64,8 +64,8 @@ body {
    color: white;
    background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg) no-repeat center center fixed;;
    background-size: cover;
-   margin-left: 100px;
-   margin-right: 100px;
+   margin-left: 70px;
+   margin-right: 70px;
 }
 
 /*heading!*/
@@ -92,6 +92,15 @@ p {
 /****************/
 p + p {
     background-color: rgba(0, 0, 26, 0.2);
+}
+
+table {
+    width: 90%;
+}
+
+td > * {
+    width: 100%;
+    
 }
 
 .laycontainer > * {

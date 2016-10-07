@@ -54,9 +54,9 @@
     
 <h2 id="main">main navigation bar</h2>
 <div class="maincontainer">
-<img src="images/navbar-2.png"
-     alt="navigation bar html" />
-     <p style="width: 55%;">To set the foundation of the page, I repeated the same step for every tab of this website (by copying and pasting, so the results are consistent).
+<!--<img src="images/navbar-2.png"-->
+<!--     alt="navigation bar html" />-->
+     <p style="width: 45%;">To set the foundation of the page, I repeated the same step for every tab of this website (by copying and pasting, so the results are consistent).
      The navigation bar is simply a directory using a list of links to redirect the user to different features of the webpage.
      First, I created a list using an unordered list ( <b>&lt;ul&gt;</b> ) and link ( <b>&lt;a href&gt;</b> ) tags. 
      Then, using CSS, I simply added fonts, colors, and structure for it to appear the way it is now. 
@@ -70,9 +70,10 @@
 
 <h2 id="sub">subnavigation bar</h2>
 <div class="subcontainer">
-    <img src="images/#" 
-         alt="subnavigation menu" />
-    <p style="width: 55%;">In addition to the main navigation bar, I created a second, smalller menu to simplify navigation of the website.
+    <table>
+    <tr>
+   <td>
+    <p style="width: 80%;">In addition to the main navigation bar, I created a second, smalller menu to simplify navigation of the website.
     Because there are so many components of building a website, users may seek only to learn about one hardware component.
     Therefore, I made the menu interactive in that the page will automatically scroll to a certain subsection when clicked (the same thing has been applied to this page). 
     Creation of this component was much more complex than the main navigation bar. 
@@ -84,22 +85,29 @@
     (Meticulous, yes, but necessary!)
     In a JavaScript file I could instruct the html to scroll to the h2 element tag when an initial tag was clicked. 
     To animate it, I simply modified researched syntax to operate in my own page.
-    The model I used was simply written as </p>
-
+    The model I used was simply written as → </p>
+    </td>
+    <td>
 <div>
 <!--style="background-color: rgba(0, 0, 26, 0.3);-->
 <!--            display: inline-block;-->
 <!--            vertical-align: middle;" -->
-<br><pre style="width: 15%;">
+    
+    
+    <pre> <!--style="width: 15%;"--> 
 $("#varButton").click(function() {
   $('html, body').animate({
     scrollTop: $("#var").offset().top
   }, 2700);
 });
-</pre><br>
-</div>
-    
-    <p style="width: 40%;">Where <b>&lt;var&gt;</b> is written, I inserted my own id tags.
+
+</pre></div></td>
+    </tr>
+
+<tr><br>
+
+    <td>
+    <p style="width: 80%;">Where <b>&lt;var&gt;</b> is written, I inserted my own id tags.
     Specifically, the first line tells the computer that the signal is when the id (labelled by the "#") is clicked, it should follow the succeeding functions. 
     The next two lines explains that the page should be animated and scroll to the "#var" element, and the last line dictates the speed of the scroll.
     I repeated these lines for every menu item, simply changing the id tags for each one.
@@ -108,7 +116,14 @@ $("#varButton").click(function() {
     This is why it is imperative that there are no syntax errors and that there are no 
     As mentioned when creating the foundation of the whole page, I linked jQuery script to my html (link gathered from external resources). 
     At the bottom of the page, before the closing body tag, I added the script tag that links <i>my</i> javascript code to the html file. </p>
-
+    </td>
+    <td>
+        <img src="images/subbar.png" 
+         alt="subnavigation menu"
+         style="width: 25em;" />
+         </td>
+    </tr>
+</table>
  </div>
 </div>
 
@@ -129,8 +144,8 @@ $("#varButton").click(function() {
 </div>
 
 <h2 id="text">text and images</h2>
-<div class="text">
-    <p style="width: 55%;">
+<div class="textcontainer">
+    <p style="width: 46%;">
         Similar to headings, text and images possess element tags that are straightforward means to add content to a webpage.
         Body text, or paragraphs, are represented as simply <b>&lt;p&gt;&lt;/p&gt;</b>, with the content written inbetween the sets. 
         There are not many additions to text alone, other than the fact that to "return", the <b>&lt;br&gt;</b> (break tag) needs to be utilized. 
@@ -149,21 +164,29 @@ $("#varButton").click(function() {
         If, for any reason, an image does not load, this attribute will alternatively display this sample of text (usually concisely describing the image). 
         This can also be added into the image tag without any brackets. 
         Building off the previous examples, the code should now look like <b>&lt;img src=&quot;images/picture.jpg&quot; alt=&quot;examplar picture&quot;/&gt;</b> .
-        <br><br>To place these two elements along the same horizontal row, a few steps were taken.
+        </p>
+        
+        <img src="images/content.png"
+         alt="motherboard html" />
+         
+        <p>To place these two elements along the same horizontal row, a few steps were taken.
         <br><b>1. </b>A <b>&lt;div&gt;</b> was placed around the elements, and then designated a class. 
         In the CSS, the class simply needs <b>display: inline-block;</b> within the brackets. 
         <br><b>2. </b>Inside each image and paragraph tag, I styled the width to a certain percent so the text and image would only fill a small percent of the page. 
         Make sure the sum of the percents equates to a percentage that is less than 100%!
         <br>This step requires a lot of trial and error, and may not be consistent for <i>each</i> image or text.
     </p>
+
 </div>
 
 <h2 id="aes">aesthetic/design</h2>
 <div class="aes">
-    <p>
+    <p style="width:40%;">
         <b>BACKGROUND IMAGE:</b> In the body selector of the CSS, I added a background property. 
-        Instead of choosing a color, I entered <b>url( )</b> and <b>background-size: cover;</b> .
+        Instead of choosing a color, I entered <b>url( )</b> and <b>background-size: cover;</b> . 
+        This image background can be seen on all modules so the website as a whole has fluidity and cohesion. 
     </p>
+    <img src="images/background.png"/>
 </div>
 
  <script src="howto.js"></script>
