@@ -2,11 +2,12 @@
 body {
     /*margin-top: 200px;*/
     font-family: helvetica;
-    text-align: justify;
     color: white;
     background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg) no-repeat center center fixed;;
-
     background-size: cover;
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
 }
 
 p {
@@ -16,7 +17,7 @@ p {
    font-size: 16px;
 } 
 
-a:link {
+a {
     color: #EBD0F6;
     text-decoration: none;
 }
@@ -26,9 +27,9 @@ a:hover {
     text-decoration: none;
 }
 
-* {
-    /*border:2px solid black;*/
-}
+/** {*/
+/*    border:2px solid black;*/
+/*}*/
 
 /*navigation bar*/
 #navbar {
@@ -74,11 +75,22 @@ h1 {
   font: italic bold;
   padding: 1px 1px 0px 1px; 
   text-align: center;
-  font-style: italic
+  font-style: italic;
+  font-size: 5em;
 }
 
 h2 {
     text-align: center;
+    font-size: 3em;
+}
+
+.container > * {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.container {
+    vertical-align: center;
 }
 
 /*.transbox {*/

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>how to create a webpage</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"  
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" 
+            href="howto.css" 
+            type="text/css" />
+</head>
+
+<body>
+<ul id="navbar"> 
+  <li><a href="index.html">About Me</a></li>
+  <li><a href="hardware.html">Hardware</a></li>
+  <li><a href="howto.html">How To</a></li>
+  <li><a href="calc.html">Calculator</a></li>
+  <li><a href="todo.html">To Do List</a></li>
+  <li><a href="vind.html">Vindinium</a></li>
+  <li><a href="bigproject.html">"Big Project"</a></li>
+ </ul>
+ 
+<ul id="tableoc">
+  <li id="layButton">• metadata •</li>
+  <li id="mainButton">main navigation bar •</li>
+  <li id="subButton">subnavigation bar	•</li>
+  <li id="headButton">headings	•</li>
+  <li id="textButton">text and images	•</li>
+  <li id="aesButton">aesthetic/design •</li>
+</ul>
+
+<h1>how to create a webpage!</h1>
+<p style="text-align: center;">this module illustrates how the <a href="hardware.html">hardware</a> page was constructed.
+<br> use the subnavigation bar to find tutorials on specific aspects of the page. enjoy! &#9786 </p>
+
+<h2 id="lay">metadata</h2>
+<div class="laycontainer">
+    <!--how to make the contents fill same % of space-->
+    <p style="width: 40%;">Before starting on your coding, the first thing any programmer must do with html is insert the <b>&lt;!DOCTYPE&gt;</b> tag.  
+    This doctype tag tells the computer what kind of document to expect (the <i>type</i> of document), and sometimes the version of the html. 
+    Following this are standard "head" elements that defines metadata, which is not displayed in the html itself. 
+    The fifth line writes the title of the page, which will show on the tab, but again, not on the display. 
+    The sixth and seventh lines link the html to other lines of code; the <b>&lt;script&gt;</b> tag links JavaScript coding (from another file) to this so it may appear in the webpage. 
+    Similarly, the succeeding line connects the file with written CSS to the html. 
+    The figure on the (left/right) shows the code used in the <a href="hardware.html">hardware page</a>!
+    </p>
+    <img src="images/metadata.png"
+         alt="sample code: metadata"/>
+</div>
+
+<div class="navbars">
+    
+<h2 id="main">main navigation bar</h2>
+<div class="maincontainer">
+<img src="images/navbar-2.png"
+     alt="navigation bar html" />
+     <p style="width: 55%;">To set the foundation of the page, I repeated the same step for every tab of this website (by copying and pasting, so the results are consistent).
+     The navigation bar is simply a directory using a list of links to redirect the user to different features of the webpage.
+     First, I created a list using an unordered list ( <b>&lt;ul&gt;</b> ) and link ( <b>&lt;a href&gt;</b> ) tags. 
+     Then, using CSS, I simply added fonts, colors, and structure for it to appear the way it is now. 
+     Again, these elements are copied and pasted each page for consistency. 
+     On the left is an image of the navigation bar without any of the CSS styling. 
+     This can give you an idea of how the html looks alone. 
+     On the right is an image of the CSS code that was added for it to appear the way it is now.</p>
+<img src="images/navbar.png"
+     alt="navigation bar css" />
+</div>
+
+<h2 id="sub">subnavigation bar</h2>
+<div class="subcontainer">
+    <img src="images/#" 
+         alt="subnavigation menu" />
+    <p style="width: 55%;">In addition to the main navigation bar, I created a second, smalller menu to simplify navigation of the website.
+    Because there are so many components of building a website, users may seek only to learn about one hardware component.
+    Therefore, I made the menu interactive in that the page will automatically scroll to a certain subsection when clicked (the same thing has been applied to this page). 
+    Creation of this component was much more complex than the main navigation bar. 
+    The foundation was set by creating an unordered list and copying the format of the aforementioned. 
+    The primary difference in forming this bar was simply that the font size was reduced and list items were not linked. 
+    <br>Animating this menu was more complex; which is why we could not simply link each section in the menu. 
+    Because I wanted to link the menu items to sections on the same page, we used id tags ( written as <b>&lt;id=&quot;#&quot;&gt;</b> ) to locate each item (instead of links).
+    Each list item was given its own id tag, and then each h2 element was given a pertinent id tag. 
+    (Meticulous, yes, but necessary!)
+    In a JavaScript file I could instruct the html to scroll to the h2 element tag when an initial tag was clicked. 
+    To animate it, I simply modified researched syntax to operate in my own page.
+    The model I used was simply written as </p>
+
+<div>
+<!--style="background-color: rgba(0, 0, 26, 0.3);-->
+<!--            display: inline-block;-->
+<!--            vertical-align: middle;" -->
+<br><pre style="width: 15%;">
+$("#varButton").click(function() {
+  $('html, body').animate({
+    scrollTop: $("#var").offset().top
+  }, 2700);
+});
+</pre><br>
+</div>
+    
+    <p style="width: 40%;">Where <b>&lt;var&gt;</b> is written, I inserted my own id tags.
+    Specifically, the first line tells the computer that the signal is when the id (labelled by the "#") is clicked, it should follow the succeeding functions. 
+    The next two lines explains that the page should be animated and scroll to the "#var" element, and the last line dictates the speed of the scroll.
+    I repeated these lines for every menu item, simply changing the id tags for each one.
+    The most complex part of this process was ensuring there were no errors and troubleshooting. 
+    In jQuery, one error can lead to a cascading failure and page will be erroneous. 
+    This is why it is imperative that there are no syntax errors and that there are no 
+    As mentioned when creating the foundation of the whole page, I linked jQuery script to my html (link gathered from external resources). 
+    At the bottom of the page, before the closing body tag, I added the script tag that links <i>my</i> javascript code to the html file. </p>
+
+ </div>
+</div>
+
+<h2 id="head">headings</h2>
+    <div class="headcontainer">
+<p style="width: 40%;">
+    Creating headings is likely one of the simplest parts of designing any webpage. 
+    Heading elements are preexistent in html, so all a coder needs to do is determine what size heading he/she would prefer. 
+    These elements are written as <b>&lt;h1&gt;</b>, and the number indicates what kind of heading. 
+    For example, h1 represents the main heading, while h2 can be a subheading, and h3 a sub-sub heading. 
+    Though these elements can come with a presetting, it can be modified to taste in CSS. 
+    I standardized the webpage so the default font of the webpage would be helvetica nue in white and would be center aligned (lines 63-65). 
+    This reduced the amount of coding I had to specify for the heading, so all I added were stylistic touches and padding.
+</p>    
+<img src="images/hardwarehead.png" 
+     style="width: 45%;"/>
+
+</div>
+
+<h2 id="text">text and images</h2>
+<div class="text">
+    <p style="width: 55%;">
+        Similar to headings, text and images possess element tags that are straightforward means to add content to a webpage.
+        Body text, or paragraphs, are represented as simply <b>&lt;p&gt;&lt;/p&gt;</b>, with the content written inbetween the sets. 
+        There are not many additions to text alone, other than the fact that to "return", the <b>&lt;br&gt;</b> (break tag) needs to be utilized. 
+        <br>Image tags are self closing (meaning they can fit within one bracket), but they require slightly more information. 
+        It isn't enough to simply create an image tag; the html does not know what image to display! 
+        At bare minimum, the src attribute needs to be added. 
+        This tells the html <i>where</i> to find the image you want to include. 
+        To secure the files, it is recommended that images are saved and uploaded to an image folder that the html can refer to. 
+        If the image source is from the internet, the tag should look like <b>&lt;img src=&quot;www.google.com&quot;/&gt; </b>. 
+        An image uploaded to a folder should resemble <b>&lt;img src=&quot;images/picture.jpg&quot;/&gt; </b>. 
+        The second tag has two main components to understand. 
+        Before the forward slash is the <i>name of the folder</i>, on the other side is the <i>file name</i>. 
+        Tip: Rename your files so it is easier to locate them in the future and also easier to write into your code! 
+        Additionally, another attribute to add is <b>&lt;alt&gt;</b> . 
+        Although not necessary, use of this attribute is highly advised. 
+        If, for any reason, an image does not load, this attribute will alternatively display this sample of text (usually concisely describing the image). 
+        This can also be added into the image tag without any brackets. 
+        Building off the previous examples, the code should now look like <b>&lt;img src=&quot;images/picture.jpg&quot; alt=&quot;examplar picture&quot;/&gt;</b> .
+        <br><br>To place these two elements along the same horizontal row, a few steps were taken.
+        <br><b>1. </b>A <b>&lt;div&gt;</b> was placed around the elements, and then designated a class. 
+        In the CSS, the class simply needs <b>display: inline-block;</b> within the brackets. 
+        <br><b>2. </b>Inside each image and paragraph tag, I styled the width to a certain percent so the text and image would only fill a small percent of the page. 
+        Make sure the sum of the percents equates to a percentage that is less than 100%!
+        <br>This step requires a lot of trial and error, and may not be consistent for <i>each</i> image or text.
+    </p>
+</div>
+
+<h2 id="aes">aesthetic/design</h2>
+<div class="aes">
+    <p>
+        <b>BACKGROUND IMAGE:</b> In the body selector of the CSS, I added a background property. 
+        Instead of choosing a color, I entered <b>url( )</b> and <b>background-size: cover;</b> .
+    </p>
+</div>
+
+ <script src="howto.js"></script>
+</body>

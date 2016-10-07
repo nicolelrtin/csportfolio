@@ -4,6 +4,7 @@ body {
     text-align: center;
     color: white;
     background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg);
+    background-size: cover;
 }
 
 p {
@@ -13,7 +14,7 @@ p {
    font-size: 16px;
 } 
 
-a:link {
+a {
     color: #EBD0F6;
     text-decoration: none;
 }
