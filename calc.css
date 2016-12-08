@@ -1,0 +1,64 @@
+body {
+    font-family: Helvetica;
+    background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg);
+    background-size: static;
+    text-align: center;
+    align-content: 
+}
+
+/*navigation bar*/
+#navbar {
+  text-align: center;
+  font-family: helvetica;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+ }
+ 
+ #navbar li {
+  display: inline-block;
+  padding: 10px;
+  background-color: transparent;
+ } 
+ 
+ #navbar a {
+  color: #3d3f4a;
+ }
+
+h1 {
+    color: white;
+}
+
+#equainput1 {
+    width: 50px;
+    border-color: #c6ab9a;
+    border-style: double;
+    text-indent: 5px;
+}
+
+#equainput2 {
+    width: 50px;
+    border-color: #c6ab9a;
+    border-style: double;
+    text-indent: 5px;
+}
+
+h2 {
+    color: white;
+}
+
+#equafunct {
+    font-family: helvetica;
+    background-color: white;
+    border-style: double;
+    border-color: #c6ab9a;
+}
+
+#calcbutton {
+    font-family: helvetica;
+    background-color: white;
+    border-color: #c6ab9a;
+    border-style: double;
+    border-radius: 15px 15px 15px 15px;
+}
+
