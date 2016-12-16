@@ -26,4 +26,3 @@ function (evt) {
 
     evt.preventDefault();
 }, false);
-
