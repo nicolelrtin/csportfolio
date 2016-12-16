@@ -3,9 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <title>calculator</title>
-    <link rel="stylesheet" href="calc.css" type="text/css" />
+
 </head>
 <body>
+<style>
+body {
+  font-family: Helvetica;
+  background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg);
+  background-size: static;
+  text-align: center;
+ }
+
+/*navigation bar*/
+#navbar {
+  text-align: center;
+  font-family: helvetica;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+ }
+ 
+ #navbar li {
+  display: inline-block;
+  padding: 10px;
+  background-color: transparent;
+ } 
+ 
+ #navbar a {
+  color: #3d3f4a;
+ }
+
+h1 {
+    color: white;
+    margin-bottom: -10px;
+}
+
+#equainput1 {
+    width: 50px;
+    border-color: #c6ab9a;
+    border-style: double;
+    text-indent: 5px;
+}
+
+#equainput2 {
+    width: 50px;
+    border-color: #c6ab9a;
+    border-style: double;
+    text-indent: 5px;
+}
+
+h2 {
+    color: white;
+    margin-bottom: -10px;
+}
+
+#equafunct {
+    font-family: helvetica;
+    background-color: white;
+    border-style: double;
+    border-color: #c6ab9a;
+}
+
+#calcbutton {
+    font-family: helvetica;
+    background-color: white;
+    border-color: #c6ab9a;
+    border-style: double;
+    border-radius: 15px 15px 15px 15px;
+}
+</style>
+
   <ul id="navbar"> 
       <li><a href="index.html">About Me</a></li>
       <li><a href="hardware.html">Hardware</a></li>
@@ -16,7 +83,9 @@
       <li><a href="bigproject.html">"Big Project"</a></li>
   </ul>
   <h1> calculator </h1>
-    <input id= "equainput1" />
+  <h3><a href="howto2" style="color: #EBD0F6;
+    text-decoration: none;">how to</a></h3>
+    <input id= "equainput1"/>
         <select id = "equafunct">
             <option value = "+"> + </option>
             <option value = "-"> - </option>

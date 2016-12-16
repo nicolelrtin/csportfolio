@@ -10,7 +10,7 @@ var result;
 calcbutton.addEventListener("click",
 // the following describes the calculations to be performed with a given input
 function(){
-//create variables to abbreviate others & cleans appearance
+// create variables to abbreviate others & cleans appearance
     var ui1 = equainput1.value;
     var ui2 = equainput2.value;
     var fun = equafunct.value;
@@ -40,3 +40,4 @@ function(){
         display.innerHTML = result;
     }
 })
+

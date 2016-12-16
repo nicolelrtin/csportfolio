@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>to do list</title>
+</head>
+<body>
+<style type="text/css">
+body {
+    font-family: Helvetica;
+    background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg);
+    background-size: static;
+    text-align: center;
+}
+
+/*navigation bar*/
+#navbar {
+  text-align: center;
+  font-family: helvetica;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+ }
+ 
+ #navbar li {
+  display: inline-block;
+  padding: 10px;
+  background-color: transparent;
+ } 
+ 
+ #navbar a {
+  color: #3d3f4a;
+ }
+ 
+ h2 {
+     color: #FFFFFF;
+ }
+ 
+#opt {
+    vertical-align: middle;
+ }
+ 
+ #addbutton {
+     background-color: #FFFFFF;
+     border-color: #FFFFFF;
+     border-radius: 5px 5px 5px 5px;
+ }
+ 
+ #newitem {
+     margin-bottom: 12px;
+ }
+ 
+ div {
+     font-family: helvetica;
+     margin-left: auto;
+     margin-right: auto;
+     width: 225px;
+     color: #FFFFFF;
+     text-align: left;
+     font-size: 20px;
+     line-height: 125%;
+ }
+</style>
+    
+    <ul id="navbar"> 
+      <li><a href="index.html">About Me</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="howto.html">How To</a></li>
+      <li><a href="calc.html">Calculator</a></li>
+      <li><a href="todo.html">To Do List</a></li>
+      <li><a href="vind.html">Vindinium</a></li>
+      <li><a href="bigproject.html">"Big Project"</a></li>
+  </ul>
+  
+  <h2> to do list </h2>
+<!-- 
+<form>
+    <textarea id="newitem" cols="30" rows="2"> </textarea>
+    <input type="submit" value="Submit"/>
+</form> -->
+
+<input type="checkbox" id="opt"/>
+<input id="newitem"/>
+<button id="addbutton">add</button> 
+ <div><span id="list"></span></div>
+  
+  <script type="text/javascript" src="todo.js"></script>
+</body>
+</html>

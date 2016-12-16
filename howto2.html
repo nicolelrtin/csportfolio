@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>how to no.2</title>
+</head>
+<body>
+  <style>
+  /*border:2px solid black;*/
+body {
+   font-family: helvetica;
+   text-align: center;
+   color: white;
+   background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg) 
+   no-repeat center center fixed;;
+   background-size: cover;
+   margin-left: 70px;
+   margin-right: 70px;
+}
+
+p {
+   text-align: justify; 
+   font-size: 20px;
+}
+
+#navbar {
+  text-align: center;
+  font-family: helvetica;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+}
+ 
+#navbar li {
+  display: inline-block;
+  padding: 10px;
+  background-color: transparent;
+} 
+ 
+#navbar a {
+  color: #3d3f4a;
+}
+
+/*heading!*/
+h1 {
+  font-weight: bold;
+  margin-bottom: -10px;
+  text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+}
+
+body a {
+    color: #F3E4F9;
+    text-decoration: none;
+}
+
+body a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.firstbox > * {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.calchtml {
+    width: 40%;
+    padding-right: 20px;
+}
+
+.calcjava {
+    width: 40%;
+    padding-left: 20px;
+}
+
+.secondbox > * {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.todohtml {
+    width: 40%;
+    padding-right: 20px;
+}
+
+.todojava {
+    width: 40%;
+    padding-left: 20px;
+}
+</style>
+
+ <ul id="navbar"> 
+  <li><a href="index.html">About Me</a></li>
+  <li><a href="hardware.html">Hardware</a></li>
+  <li><a href="howto.html">How To</a></li>
+  <li><a href="calc.html">Calculator</a></li>
+  <li><a href="todo.html">To Do List</a></li>
+  <li><a href="vind.html">Vindinium</a></li>
+  <li><a href="bigproject.html">"Big Project"</a></li>
+ </ul>
+ 
+ <h1>how to (no.2)</h1>
+ <h2>html & javascript: calculator & to do list</h2>
+ 
+<div class="firstbox">
+ <div class="calchtml">
+     <h2 style="text-align:left;">
+         <a href="calc.html">the calculator: html</a></h2>
+     <p> Building a functional calculator is relatively simple, but it requires 
+     an understanding of html and javascript, which may not come as easily. 
+     <br>First, a single input element was created, so the user can type in the 
+     first value of the equation. It should then be given a descriptive id 
+     (which function will be explained later).
+     <br> Succeeding this is the dropdown in which the calculator functions are 
+     stored. There is no "dropdown" tag, but rather one called "select". Note 
+     that this tag is not self closing; each option will go inside the two tags. 
+     This should also be given an ID, such as "function". After the first select 
+     tag, "option" elements are used to identify the various functions. This 
+     tag is also not self closing; in-between is the label the user should be 
+     able to see. Once all the desired options are listed, the select tag can 
+     be closed. Following this should be a second input tag for the second 
+     number in the equation.
+     <br> Next, we have a button that acts as an interactive equals sign. 
+     This part is crucial so the computer knows to use the code block written 
+     in the JavaScript. Luckily, creating this element is very easy! Simply 
+     write a "button" tag, give it an id, write a label for the user (outside 
+     the closing bracket), and close the tag. One version could potentally look
+     like <br> &lt;button id=&quot;btn&quot;&gt; calculate &lt;/button&gt;.
+     <br> The very last step is to create a space where the computer can input 
+     the answer to the equation. This can be done using a "span" tag. In this 
+     space, the computer can perform the above calculation and then store the 
+     answer for the user to see. This should also be given an ID tag.
+     <br> Once all the latter has been followed, the code should look somewhat 
+     like this: </p>
+     <img src="images/calchtml.PNG" alt="sample html code block" style="width:90%;"/>
+  </div>
+  
+ <div class="calcjava">
+     <h2 style="text-align:left;">
+         <a href="calc.html">the calculator: javascript</a></h2>
+     <p> As per all javascript documents, the first step of setting up our 
+     calculator is to create a .js document and link it in our html. In the 
+     javascript document, we have to declare our variables. When creating the 
+     elements of the calculator in HTML, each element should have been given an 
+     ID. For simplicity, the name of these IDs will also be our variable names. 
+     Each of our variables will be assigned a DOM element 
+     document.getElementById(" ") , which essentially tells the JavaScript to 
+     use the element in the HTML with the corresponding ID. With these variables, 
+     we can perform calculations with each of their given values. 
+     <br> Next, we add an "Event Listener" to the button, which formulates a 
+     response when the button is "clicked". The function that it carries out is 
+     defined by the statements succeeding it. 
+     <br> Before we define the conditions that run when the button is clicked, 
+     we created new variables that is specific to this function. This helps to 
+     clean the code and make it easier to read overall. Because there are so 
+     many operating functions for the calculator to <italic>potentally</italic> 
+     perform, we use if/then statements to specify what happens in each operation. 
+     In this case, we use "if" for the first statement and "else if" fof the rest. 
+     Taking the first line of the first as an example, the JavaScript essentially 
+     reads, "if this function is true, run this code block". Note that the 
+     condition is denoted as "equal to" by two equals signs, and the open curly 
+     bracket holds the conditional code. 
+     <br> Inside is like simple math. "Result" 
+     is where the answer is stored, as characterized by the sum of ui1 and ui2. 
+     The uis are preceded by a plus sign to tell the computer that ui is a 
+     number and not a string. Without it, the computer would simply put the 
+     values next to each other (i.e. 2 + 3 = 23). The last line tells the 
+     computer to place the result in the HTML of the display.
+     This series of steps can be repeated with the different functions, but 
+     for extraneous operations, <a href="http://www.w3schools.com/js/js_math.asp">
+     this resource </a> can be used. The only thing that differs the latter 
+     statements from the first is that "else if" should be used instead of "if". 
+     If done correctly, the code should look similar to the following: </p>
+     <img src="images/calcjs.PNG" alt="my calculator javascript" style="width:%;"/>
+ </div>     
+</div>
+<!--
+<div class="secondbox">
+ <div class="todohtml">
+    <h2 style="text-align:left;">
+        <a href="todo.html">to do list: html</a></h2>
+    <p> With the basics of interactive forms from the calculator, writing the 
+    HTML for the to do list is relatively easy. It's main components comprise 
+    of a checkbox, input, button, and span. The latter of the three are exactly 
+    as created in the former tutorial, with the tag as named and ids to follown/
+    To create the checkbox, we simply used the input tag (the checkbox tag does 
+    not always work) and identify the "type" as a checkbox. That's it!
+    <br> It should look as follows: </p>
+    <img src="images/todohtml.PNG" alt="my to do list html bit"/>
+</div>
+ <div class="todojs">
+     <h2 style="text-align:left;">
+        <a href="todo.html">to do list: javascript</a></h2>
+     <p> Unfortunately, the simplicity of the HTML is overcompensated for in the  
+     complexity of its JavaScript. 
+     </p>
+ </div> -->
+</div>
+</body>
+</html>
