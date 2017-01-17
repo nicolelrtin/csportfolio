@@ -26,3 +26,10 @@ function (evt) {
 
     evt.preventDefault();
 }, false);
+
+// make list item italic when double clicked
+list.addEventListener("mouseover",
+function(evt) {
+    var task = evt.target;
+    task.innerHTML += '<div style="font-style: italic; color: #8F9DB8;">' +newitem.value +'</div>';
+});
