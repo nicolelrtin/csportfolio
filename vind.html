@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>nicole's website</title>
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+</head>
+
+<body>
+    <style>
+        /*general applications & classes*/
+        
+        body {
+            font-family: helvetica;
+            color: white;
+            margin-left: 160px;
+            margin-right: 160px;
+            background: url(https://craigmod.com/images/journal/moonrise/b02-large.jpg);
+            background-size: contain;
+        }
+        
+        p {
+            text-align: left;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, .35);
+        }
+        
+        a {
+            color: #EBD0F6;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        /* * {
+border:2px solid black;
+} */
+        /*navigation bar*/
+        
+        #navbar {
+            text-align: center;
+            font-family: helvetica;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #FFFFFF;
+        }
+        
+        #navbar li {
+            display: inline-block;
+            padding: 10px;
+            background-color: transparent;
+        }
+        
+        #navbar a {
+            color: #3d3f4a;
+        }
+        /*heading!*/
+        
+        h1 {
+            font-weight: bold oblique;
+            padding: 3px 1px 0px 1px;
+            text-align: center;
+        }
+        
+        h4 {
+            text-align: center;
+        }
+        
+        .container>p {
+            text-align: left;
+        }
+        
+        .highlight {
+            background-color: rgba(0, 0, 0, .7);
+        }
+    </style>
+
+    <ul id="navbar">
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+        <li><a href="howto.html">How To</a></li>
+        <li><a href="calc.html">Calculator</a></li>
+        <li><a href="todo.html">To Do List</a></li>
+        <li><a href="vind.html">Vindinium</a></li>
+        <li><a href="bigproject.html">"Big Project"</a></li>
+    </ul>
+
+    <h1> vindinium </h1>
+
+    <h4> an artificial intelligence programming challenge </h4>
+
+    <div class="container">
+        <p>
+            <strong style="font-size:18px;"> what is vindinium? </strong>
+            <br>Vindinium is an online, turn-based, multiplayer programming challenge for those learning artificial intelligence. Players program their own "heroes", or robots, to move across a board, develop strategies, and collect as many points (gold)
+            as possible. Each bot will compete with three other active bots, programmed by others, and can make complicated moves such as attacking, stealing mines (gold sites), and restoring health. At the end of 1200 rapid turns, the live player with
+            the most gold is declared the victor. Again, the goal of the challenge is to create a program that plays the game intelligently.
+        </p>
+
+        <h3>programming commentary</h3>
+        <p>
+            The initial code in much of the section below was preprogrammed as a part of the Vindinium program. In essence, it links the bot to other programs and systems that make it easier for the programmer to focus on the programming itself. The only element
+            that required changing on the behalf of the user was the user code (which is designated by Vindinium and specific to a person- in my case, this was "71auyjny"). In addition, we would use the subsequent statement "arena" if our bot is ready
+            for battle. When the code is run, it would then send it to the live board. If not, we would change it to "training", like in the line before that is commented out.
+        </p>
+        <pre class="highlight">
+    
+    var Bot = require('bot');
+    var PF = require('pathfinding');
+    // Put your bot's code here and change training to Arena when you want to fight others.
+    // var bot = new Bot('71auyjny', 'training', 'http://vindinium.org'); 
+    // Put your bot's code here and change training to Arena when you want to fight others.
+    var bot = new Bot('71auyjny', 'arena', 'http://v.summitdevclub.com:9000');
+    var goDir;
+    var Promise = require('bluebird');
+    Bot.prototype.botBrain = function() {
+    return new Promise(function(resolve, reject) {
+        _this = bot;
+        
+        //////* Write your bot below Here *//////
+        </pre>
+        
+        <p>
+            This section nears the modifiable areas to program. Many of these variables store code that will be used heavily later- putting them inside of the variable makes it easier to refer back to them. For example, it is much easier to write "myPos" than the whole array that represents my bot's current location. Another variable "enembyBots" was set to create an array that creates a way to refer to the data of all the bots, minus your own. In essence, it checks to see what bot number you are and it "pushes" or, in this case, renames all the bots so that each bot number is shifted to record as (1, 2, 3). All of the lines up to the enemyBot variable were preprogrammed for ease by the Vindinium creators. The last line, however (openMines) was written by me. This variable creates an array that collects, as the name suggests, all the open mines. Though some may be occupied, I consodered any mine that was not my own "open", as it was easily surmountable. In this variable, I compiled all the data from the mines by using the given variable "bot.bot#.mines" and using "enemyBots" to replace "bot.bot#". This technique is used frequently throughout my programming as a shortcut, as I will generally want to refer to all enemyBots over specific bots. In this, however, I still need to refer to each bot to gather the mine information of each individual (thus the use of "enemyBot[n]". The concat() method is use to concatenate arrays, or combine them end to end- thus the openMines can contain a list of all the mines currently not owned by me. 
+        </p>
+        <pre class="highlight">
+
+        //////* Set `myDir` in the direction you want to go and then bot.goDir is set to myDir at the bottom *////////
+
+        /*                                      *
+         * This Code is global data!            *
+         *                                      */
+
+        // Set myDir to what you want and it will set bot.goDir to that direction at the end.  Unless it is "none"
+        var myDir;
+
+        // Creates the array myPos which stores my bot's coordinates
+        var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
+
+        // Compiles other bots in the array enemyBots
+        var enemyBots = [];
+        if (bot.yourBot.id != 1) enemyBots.push(bot.bot1);
+        if (bot.yourBot.id != 2) enemyBots.push(bot.bot2);
+        if (bot.yourBot.id != 3) enemyBots.push(bot.bot3);
+        if (bot.yourBot.id != 4) enemyBots.push(bot.bot4);
+
+        var openMines = enemyBots[0].mines.concat(enemyBots[1].mines).concat(enemyBots[2].mines).concat(bot.freeMines);
+        </pre>
+        
+        <p>
+            Below are "if statements" that I declared at the top of my code so I could refer back to it later. Note that typically, they would go in the section that commands the bot "how to do it", but I wanted to be able to use them in both my decision-making and the executions. All of the statments below have a similar formatting. After the comment, the first line declares the variable and, generally, what the variable is trying to find (closestTavern, closest Bot, etc.). The variable is then set to find the first in the array that the desired variable lies in, denoted by [0]. The next line, in a way, tells the game what to do with that variable. This line is exactly the same in all of the variables. What this does, in simple terms, is take the random variable, and compare it to the next one. The one following it speaks of the condition of comparison. If the statement does not apply to the random variable, then it takes the variable used to compare it, and holds it up to another variable. This process repeats (or loops), as per the "for" function is used for, until it determines the variable that best satisfies the if statement. In the case of the variables that try to find the "closest", the if condition attempts to find if the distance between my bot's position and a random tavern (whatever is applied at the time), and see if it is greater than the random bot.taverns[i]. When this condiditon is satisfied, the random tavern that is the closest is set to equal closestTavern.
+        </p>
+        <pre class="highlight">
+      
+        // Determines closest tavern relative to my position and stores the position array in closestTavern
+        var closestTavern = bot.taverns[0]; 
+        for (i = 0; i < bot.taverns.length; i++) {
+            if (bot.findDistance(myPos, closestTavern) > bot.findDistance(myPos,bot.taverns[i])) {
+                closestTavern = bot.taverns[i];
+            }
+        }
+        </pre>
+        <p>
+            This variable is a part of a function that I decided to create on my own. It will be discussed further in another section, but the variable itself determines which bot has the most mines. This is important to note, because when a player kills another bot, he/she inherits all of their mines and can then collect money from those mines.
+        </p>
+        <pre class="highlight">
+     
+        // Targets the competitor with the most mines and stores the competitor in the variable leadingBot
+        var leadingBot = enemyBots[0];
+        for (i = 0; i < enemyBots.length; i++) {
+            if (enemyBots[i].mineCount > leadingBot.mineCount) {
+                leadingBot = enemyBots[i];
+            }
+        }
+        </pre>
+        <p>
+            closestBot is, intuitively named, a variable that determines which bot is the closest (as for closestMine). These variable function exactly the same as closestTavern, with different obvious targets.
+        </p>
+        <pre class="highlight">
+            
+        // Determines the location of the closest enemyBot and stores position array in closestBot 
+        var closestBot = enemyBots[0];
+        for (i = 0; i < enemyBots.length; i++) {
+            if (bot.findDistance(myPos, closestBot.posArray) < bot.findDistance(myPos, enemyBots[i].posArray)) {
+                closestBot = enemyBots[i];
+            }
+        }
+        
+        // Finds the closest mine relative to my position and uses closestMine to store the position array.
+        var closestMine = openMines[0];
+        for (i = 0; i < openMines.length; i++) {
+            if (bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, openMines[i])) {
+                closestMine = openMines[i];
+            }
+        }
+        </pre>
+        <p>
+            As the large comment states below, this section is tree of decisions that helps the bot decide what to do. Since we are not able to manually operate the bot and perform specific tasks, we need to design the bot as intelligently as we can to make appropriate choices given its conditions. JavaScript does read each item in order, so each task is listed in order of ascending importance.
+            <br>The first and most important item is my bot's health- if I near death then I want to recharge immediately. In addition, every interaction with mines or other bots uses energy, so I made this my priority. The first "if" statement is then to find the closest Tavern given that my bot's life is less than 40. I did not do too much research as to know how much health each action takes, but I knew that the total was 100 and most of my peers were saying they would be wary at 50. Because, when my heath subcedes a number I would go straight to a tavern and there was a low chance that I would run into a bot that would attack me on the way, I felt comfortable commanding this action below 40. 
+            <br>The second most important action, to me, was to attack an enemyBot if they were in my direct vicinity. Self-preservation goes along the same ideology that preserves health in the first action. The idea was that, if I was in imminent danger, I would try to get to the enemyBot before they get to me. Since my primary and first action was to find a tavern, I defined "direct vicinity" as (the bot being) closer to me than I am to the closest tavern. For the if statement, I used a similar format to that in the earlier variables.
+            <br>Next, I added a function of my own that draws on the leadingBot variable mentioned earlier. This function looks much more daunting than the other task options, because this draws on more calculations with the variable. In sum, the "slay" task is a more intelligent form of the attack task, because it calculates if any bot owns more than half of the total mines and attacks that bot. Being able to steal half the mines on the board in one stroke gives me a huge advantage. However, I also knew that it would not be likely that a player may be able to reach this, so I priortized my bot's health. Reading the line of code quickly makes it look complicated, but upon further examination, it is easy to see it is really simple. In essence, it compares two percentages, and will be true if the first percentage is indeed greater than the second. The first fraction is (leadingBot's number of mines)/(the number of total mines), and the second is just 50%.
+            <br>Last, this function is the technical default; the operation that is carried out if everything else is false. Because the only condition that needs to be fulfilled is the other conditions being false, represented by "else". Thus, this task, going to mines, is very simple and just links to closestMine (in the "how to do it" section). Because mines reap money, it would seem that this should be higher priority, but many times all other conditions will be false <i>and</i> getting individual mines is slower than attacking other players and taking all their mines.
+        </p>
+        <pre class="highlight">
+            
+        /*                                      *
+         * This Code Decides WHAT to do         *
+         *                                      */
+         
+         // Decision making tree - each if statement lower indicates lower priority
+         
+         // Assigns the task findTavern if my bot's life is less than 40
+        var task = "findTavern";
+        if (bot.yourBot.life < 40) {
+            task = "findTavern";
+        }
+        
+        // If both of the above statements are false, this assigns task "attack" if my bot is closer to another bot than a tavern
+        else if (bot.findDistance(myPos, closestBot.posArray) < bot.findDistance(myPos, closestTavern)) {
+            task = "attack";
+        }
+        
+        // If the previous is false, assigns the task "slay" if one player owns more than half of the total mines
+        else if ( ( (leadingBot.mineCount)/(enemyBots[0].mineCount + enemyBots[1].mineCount + enemyBots[2].mineCount + 
+            bot.freeMines.length + bot.yourBot.mineCount)) > (0.5) ) {
+            task = "slay";
+        }
+        
+        // Default task if all other statements are false; assigns the task "collectMines"
+        else {
+            task = "collectMines";
+        }
+        </pre>
+        <p>
+            The rest of these lines simply instruct the bot how to perform the given function. These tasks are now independent (unlike the section above), so they are not bound by "else if"s- this solely requires the task to equal some variable and it will run. These statements are very simple, as they only do two things. One, the system reads a "console.log" so when it runs, it will tell the user and make that statement. The other function sets the bot on the path towards a variable. This is where the bot will begin to walk towards closestTavern or leadingBot (or whatever other variable) to interact with its target. 
+        </p>
+        <pre class="highlight">
+        /*                                      *
+         * This Code Determines HOW to do it    *
+         *                                      */
+         
+         // Directs bot onto path associated with the task
+         
+         // If the assigned task is findTavern, the path is directed towards closestTavern and will say "Restoring Health!"
+        if (task === "findTavern") {
+            console.log("Restoring Health!");
+            myDir = bot.findPath(myPos,closestTavern);
+        }
+        
+        // If assigned "attack", path is directed towards closestBot and will read "Attack an Enemy Bot!"
+        if (task === "attack") {
+            console.log("Attacking an Enemy Bot!");
+            myDir = bot.findPath(myPos, closestBot);
+        }
+        
+        // If assigned "slay", path is directed towards leadingBot and will read "oo killem"
+        if (task === "slay") {
+            console.log("oo killem");
+            myDir = bot.findPath(myPos, leadingBot);
+        }
+        
+        // If assigned "collectMines", the bot will follow a direct path to closestMine and read "Collecting a Free Mine!"
+        if (task === "collectMines") {
+            console.log("Collecting a Free Mine!");
+            myDir = bot.findPath(myPos, closestMine);
+        }
+
+        /*                                                                          *
+         * This Code Sets your direction based on myDir. Change if you want.        */
+
+        bot.goDir = myDir;
+
+        ///////////* DON'T REMOVE ANTYTHING BELOW THIS LINE *//////////////
+        resolve();
+    });
+}
+bot.runGame();
+</pre>
+        <p>
+            I encountered multiple obstacles when writing the code for my bot, and it seemed there were just many blips of errors in my code which, in turn, took a while to find. But once it started working, it worked very well and has been very successful in defending its place. Writing everything from near scratch was a challenge initially, but once I was able to write a few lines, the repetition became easier and my understanding of what I was writing developed. 
+        </p>
+    </div>
+
+</body>
+
+</html>
