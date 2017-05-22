@@ -24,7 +24,8 @@
         p {
             text-align: left;
             font-size: 16px;
-            background-color: rgba(0, 0, 0, .35);
+            background-color: rgba(0, 0, 0, .45);
+            padding: 10px 10px 10px 10px;
         }
         
         a {
@@ -36,7 +37,6 @@
             color: #FFFFFF;
             text-decoration: none;
         }
-
         /*navigation bar*/
         
         #navbar {
@@ -64,13 +64,13 @@
             text-align: center;
         }
         
-        
-        .container > p {
+        .container>p {
             text-align: left;
         }
         
         .highlight {
             background-color: rgba(0, 0, 0, .7);
+            padding: 10px 10px 10px 10px;
         }
     </style>
 
@@ -88,23 +88,45 @@
 
     <div class="container">
         <p>
-            For my final project of the year, I chose to code an interactive calendar/planner. 
+            For my final project of the year, I chose to code an interactive calendar/planner. My vision was to allow the user to create objectives, deadlines, event days, or whatever they would like to mark in a calendar, and then be able to drag the item to a date
+            they wanted to schedule it for and have it stay, so afterwards, they could see everything happening in their month (like a standard paper planner). The drag and drop function alone was rather simple. The tutorial below simply explains the
+            JavaScript function, though many parts are attached to HTML elements.
         </p>
-        
+
         <pre class="highlight">
-    
         function allowDrop(ev) {
             ev.preventDefault();
         }
+        </pre>
+        <p>
+            The first of three functions, allowDrop, simply prevents the "default", which is that objects will generally be unmovable, 
+            so by preventing the default, the element that this function will be attached to won't be bound by restrictions. This function was
+            tagged onto the list items in the HTML by adding a property in each area where we desired to have an item be placed. In this case, 
+            it was in each of the table cells (or "days" in the calendar), which looked like ondragover="allowDrop(event)".
+            In essence, this property just tells the program that when the user drags an item over, the default will be prevented.
+        </p>
 
+        <pre class="highlight">
         function drag(ev) {
             ev.dataTransfer.setData("text", ev.target.id);
         }
+        </pre>
+        <p>
+            "Drag" follows the first event and simply allows the data in a target element to be transferred from point A to B. Under each 
+            entry item that the user inputted, I added an  ondragstart="drag(event)"  which commands that, when the user begins to drag an item, 
+            this function will run (It's pretty intuitive :). 
+        </p>
 
+        <pre class="highlight">
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
             ev.target.appendChild(document.getElementById(data));
         }
         </pre>
+        <p>
+            This function almost combines the other to in order to allow for the "drop" in the drag and drop. Again, the default would be for 
+            the computer to not allow for a moving of an object from one place to an other. The second line creates a variable that contains 
+            the received data from the element that is moved, and the third line adds (or "appends") the data to the cell contents. 
+        </p>
     </div>

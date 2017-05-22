@@ -179,12 +179,12 @@
             function showInput() {
                 itemNum++;
                 list.innerHTML +=
-                    '<div draggable="true" ondragstart="drag(event)" ondblclick="remove()" id="box"' + itemNum + '" style="font-weight: bold; font-size: 16px; padding: 3px 3px 3px 3px; background-color: #C7D1E6;">' +
+                    '<div draggable="true" ondragstart="drag(event)" ondblclick="remove()" id="box' + itemNum + '"style="font-weight: bold; font-size: 16px; padding: 3px 3px 3px 3px; background-color: #C7D1E6;">' +
                     newitem.value + '</div>';
             });
 
         list.addEventListener("dblclick",
-            function(evt){
+            function(evt) {
                 var task = evt.target;
                 task.parentNode.removeChild(task);
 
@@ -209,16 +209,16 @@
             function remove(evt) {
                 var task = evt.target;
                 var fireworks = document.createElement('img');
-                fireworks.style.position = "absolute";
-                // fireworks.style.top = evt.clientX + "px";
-                // fireworks.style.left = evt.clientY + "px";
-                // fireworks.src = "images/fireworks.gif";
-                task.parentNode.appendChild(fireworks);
+                fireworks.style.position = "relative";
+                fireworks.style.top = "-600px";
+                fireworks.style.left = "50px";
+                fireworks.src = "images/fireworks.gif";
+                task.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(fireworks);
                 task.parentNode.removeChild(task);
 
                 setTimeout(function(){
                     fireworks.parentNode.removeChild(fireworks);
-                }, 3000);
+                }, 2600);
 
                 evt.preventDefault();
             }, false);
