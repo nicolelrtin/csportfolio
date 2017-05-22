@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>monthly planner</title>
+</head>
+
+<body>
+    <style type="text/css">
+        body {
+            font-family: Helvetica;
+            background: url(http://static.thousandwonders.net/Annapurna.640.7708.jpg);
+            background-size: static;
+            text-align: center;
+        }
+        /*navigation bar*/
+        
+        #navbar {
+            text-align: center;
+            font-family: helvetica;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #FFFFFF;
+        }
+        
+        #navbar li {
+            display: inline-block;
+            padding: 10px;
+            background-color: transparent;
+        }
+        
+        #navbar a {
+            color: #3d3f4a;
+        }
+        
+        h2 {
+            color: #FFFFFF;
+        }
+        
+        div {
+            font-family: helvetica;
+            margin-left: auto;
+            margin-right: auto;
+            color: #FFFFFF;
+            font-size: 20px;
+            line-height: 125%;
+        }
+        
+        .container > * {
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        table {
+            background-color: #C0C5CE;
+            width: 900px;
+            height: 650px;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        
+        thead {
+            font-weight: bold;
+            height: 10px;
+            text-align: center;
+        }
+        
+        tbody {
+            height: 50px;
+            text-align: right;
+            vertical-align: top;
+        }
+        
+        #addbutton {
+            background-color: #FFFFFF;
+            border-color: #FFFFFF;
+            border-radius: 5px 5px 5px 5px;
+        }
+    </style>
+
+    <ul id="navbar">
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+        <li><a href="howto.html">How To</a></li>
+        <li><a href="calc.html">Calculator</a></li>
+        <li><a href="todo.html">To Do List</a></li>
+        <li><a href="vind.html">Vindinium</a></li>
+        <li><a href="bigproject.html">"Big Project"</a></li>
+    </ul>
+
+    <h2> may planner </h2>
+
+    <div class="container">
+
+        <div>
+            <table border="3.5 #4F5B66" cellpadding="5">
+                <thead>
+                    <tr>
+                        <td>sunday</td>
+                        <td>monday</td>
+                        <td>tuesday</td>
+                        <td>wednesday</td>
+                        <td>thursday</td>
+                        <td>friday</td>
+                        <td>saturday</td>
+                </thead>
+                <tbody id="tbody">
+                    </tr>
+                    <tr>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> </td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 1</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 2</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 3</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 4</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 5</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 6</td>
+                    </tr>
+                    <tr>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 7</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 8</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 9</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 10</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 11</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 12</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 13</td>
+                    </tr>
+                    <tr>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 14</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 15</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 16</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 17</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 18</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 19</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 20</td>
+                    </tr>
+                    <tr>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 21</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 22</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 23</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 24</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 25</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 26</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 27</td>
+                    </tr>
+                    <tr>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 28</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 29</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 30</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> 31</td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> </td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> </td>
+                        <td id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="entry" style="width: 15%">
+            <input id="newitem" />
+            <button id="addbutton">add</button>
+            <br>
+            <br>
+            <div style="width: 125px;" id="slot#" ondrop="drop(event)" ondragover="allowDrop(event)"> <span id="list"></span>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        var newitem = document.getElementById("newitem");
+        var addbutton = document.getElementById("addbutton");
+        var list = document.getElementById("list");
+        var itemNum = 0;
+        var tbody = document.getElementById("tbody");
+
+        addbutton.addEventListener("click",
+            function showInput() {
+                itemNum++;
+                list.innerHTML +=
+                    '<div draggable="true" ondragstart="drag(event)" ondblclick="remove()" id="box"' + itemNum + '" style="font-weight: bold; font-size: 16px; padding: 3px 3px 3px 3px; background-color: #C7D1E6;">' +
+                    newitem.value + '</div>';
+            });
+
+        list.addEventListener("dblclick",
+            function(evt){
+                var task = evt.target;
+                task.parentNode.removeChild(task);
+
+                evt.preventDefault();
+            }, false);
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+        tbody.addEventListener("dblclick",
+            function remove(evt) {
+                var task = evt.target;
+                var fireworks = document.createElement('img');
+                fireworks.style.position = "absolute";
+                // fireworks.style.top = evt.clientX + "px";
+                // fireworks.style.left = evt.clientY + "px";
+                // fireworks.src = "images/fireworks.gif";
+                task.parentNode.appendChild(fireworks);
+                task.parentNode.removeChild(task);
+
+                setTimeout(function(){
+                    fireworks.parentNode.removeChild(fireworks);
+                }, 3000);
+
+                evt.preventDefault();
+            }, false);
+            
+
+    </script>
+
+</body>

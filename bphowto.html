@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>nicole's website</title>
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+</head>
+
+<body>
+    <style>
+        /*general applications & classes*/
+        
+        body {
+            font-family: helvetica;
+            color: white;
+            margin-left: 160px;
+            margin-right: 160px;
+            background: url(https://craigmod.com/images/journal/moonrise/b02-large.jpg);
+            background-size: contain;
+            /*border:2px solid black;*/
+        }
+        
+        p {
+            text-align: left;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, .35);
+        }
+        
+        a {
+            color: #EBD0F6;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        /*navigation bar*/
+        
+        #navbar {
+            text-align: center;
+            font-family: helvetica;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #FFFFFF;
+        }
+        
+        #navbar li {
+            display: inline-block;
+            padding: 10px;
+            background-color: transparent;
+        }
+        
+        #navbar a {
+            color: #3d3f4a;
+        }
+        /*heading!*/
+        
+        h1 {
+            font-weight: bold oblique;
+            padding: 3px 1px 0px 1px;
+            text-align: center;
+        }
+        
+        
+        .container > p {
+            text-align: left;
+        }
+        
+        .highlight {
+            background-color: rgba(0, 0, 0, .7);
+        }
+    </style>
+
+    <ul id="navbar">
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+        <li><a href="howto.html">How To</a></li>
+        <li><a href="calc.html">Calculator</a></li>
+        <li><a href="todo.html">To Do List</a></li>
+        <li><a href="vind.html">Vindinium</a></li>
+        <li><a href="bigproject.html">"Big Project"</a></li>
+    </ul>
+
+    <h1> how to: drag and drop </h1>
+
+    <div class="container">
+        <p>
+            For my final project of the year, I chose to code an interactive calendar/planner. 
+        </p>
+        
+        <pre class="highlight">
+    
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+        </pre>
+    </div>
