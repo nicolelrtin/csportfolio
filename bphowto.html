@@ -21,10 +21,10 @@
             /*border:2px solid black;*/
         }
         
-        p {
+        div {
             text-align: left;
             font-size: 16px;
-            background-color: rgba(0, 0, 0, .45);
+            background-color: rgba(0, 0, 0, .2);
             padding: 10px 10px 10px 10px;
         }
         
@@ -67,11 +67,7 @@
         .container>p {
             text-align: left;
         }
-        
-        .highlight {
-            background-color: rgba(0, 0, 0, .7);
-            padding: 10px 10px 10px 10px;
-        }
+
     </style>
 
     <ul id="navbar">
@@ -93,7 +89,7 @@
             JavaScript function, though many parts are attached to HTML elements.
         </p>
 
-        <pre class="highlight">
+        <pre>
         function allowDrop(ev) {
             ev.preventDefault();
         }
@@ -106,7 +102,7 @@
             In essence, this property just tells the program that when the user drags an item over, the default will be prevented.
         </p>
 
-        <pre class="highlight">
+        <pre>
         function drag(ev) {
             ev.dataTransfer.setData("text", ev.target.id);
         }
@@ -117,7 +113,7 @@
             this function will run (It's pretty intuitive :). 
         </p>
 
-        <pre class="highlight">
+        <pre>
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
